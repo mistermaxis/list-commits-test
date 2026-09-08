@@ -1,4 +1,4 @@
-name: list-commits
+name: List Commits
 
 on:
   push:
@@ -24,6 +24,6 @@ jobs:
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ steps.update_tag.outputs.updated_tag }}
+        tag: ${{ steps.update-tag.outputs.updated_tag }}
         name: Release ${{ steps.update_tag.outputs.updated_tag }}
         makeLatest: true
