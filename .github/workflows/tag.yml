@@ -25,5 +25,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.update-tag.outputs.updated_tag }}
-        name: Release ${{ steps.update_tag.outputs.updated_tag }}
+        name: Release ${{ steps.update-tag.outputs.updated_tag }}
+        generateReleaseNotes: true
         makeLatest: true
