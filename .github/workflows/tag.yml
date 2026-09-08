@@ -9,16 +9,18 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: update-tag
-        uses: mistermaxis/update-tag-action@output-changelog
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          prefix: v
-          bump: minor
-          suffix: ''
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.update_tag.outputs.updated_tag }}
-          name: Release ${{ steps.update_tag.outputs.updated_tag }}
-          makeLatest: true
+    - name: Checkout
+      uses: actions/checkout@v7
+    - name: update-tag
+      uses: mistermaxis/update-tag-action@output-changelog
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        prefix: v
+        bump: minor
+        suffix: ''
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.update_tag.outputs.updated_tag }}
+        name: Release ${{ steps.update_tag.outputs.updated_tag }}
+        makeLatest: true
