@@ -30,5 +30,4 @@ jobs:
         tag: ${{ steps.update-tag.outputs.updated_tag }}
         name: Release ${{ steps.update-tag.outputs.updated_tag }}
         body: ${{ steps.update-tag.outputs.changelog }}
-        generateReleaseNotes: true
         makeLatest: true
