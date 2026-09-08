@@ -22,12 +22,12 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         prefix: v
-        bump: minor
+        bump: patch
         suffix: ''
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.update-tag.outputs.updated_tag }}
         name: Release ${{ steps.update-tag.outputs.updated_tag }}
-        generateReleaseNotes: true
+        body: ${{ steps.update-tag.outputs.changelog }}
         makeLatest: true
