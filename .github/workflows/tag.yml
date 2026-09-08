@@ -8,10 +8,12 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout
       uses: actions/checkout@v7
-    - name: update-tag
+    - name: Update Tag
       id: update-tag
       uses: mistermaxis/update-tag-action@output-changelog
       with:
