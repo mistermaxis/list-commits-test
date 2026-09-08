@@ -12,6 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v7
     - name: update-tag
+      id: update-tag
       uses: mistermaxis/update-tag-action@output-changelog
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
