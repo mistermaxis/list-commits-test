@@ -16,3 +16,9 @@ jobs:
           prefix: v
           bump: minor
           suffix: ''
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.update_tag.outputs.updated_tag }}
+          name: Release ${{ steps.update_tag.outputs.updated_tag }}
+          makeLatest: true
