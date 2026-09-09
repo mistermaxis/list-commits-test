@@ -29,5 +29,5 @@ jobs:
       with:
         tag: ${{ steps.update-tag.outputs.updated_tag }}
         name: Release ${{ steps.update-tag.outputs.updated_tag }}
-        body: ${{ steps.update-tag.outputs.changelog }}
+        body: ${{ steps.update-tag.outputs.commits }}
         makeLatest: true
