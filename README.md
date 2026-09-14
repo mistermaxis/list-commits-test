@@ -5,10 +5,3 @@ Test push 2
 Test push 3  
 Test push 4  
 Test push 12  
-Test push 13  
-Test push 22  
-Test push 14  
-Test push 15  
-:rocket::heart::gear:
-Test push 33
-Test push 45
