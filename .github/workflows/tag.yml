@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v7
     - name: Update Tag
       id: update-tag
-      uses: mistermaxis/update-tag-action@output-changelog
+      uses: mistermaxis/update-tag-action@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         prefix: v
@@ -33,3 +33,4 @@ jobs:
           ### Changelog:
           ${{ steps.update-tag.outputs.changelog }}
         makeLatest: true
+        generateReleaseNotes: true
